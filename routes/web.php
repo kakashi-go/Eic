@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
     // return view('archives.index');
 // });
 
+
+Route::get('/book', 'BookController@index');
+
 Route::get('/archives/',function(){
     return view('archives.index');
 });
