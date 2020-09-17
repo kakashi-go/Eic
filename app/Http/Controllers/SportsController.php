@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
 use App\Sports;
+use App\Http\Requests\StoreSports;
  
 class SportsController extends Controller
 {
@@ -34,7 +35,7 @@ class SportsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreSports $request)
     {
         sports::create($request->all());
         return redirect()->route('sports.index')->with('success', '新規登録完了しました');
@@ -71,7 +72,7 @@ class SportsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreSports $request, $id)
     {
         $update = [
             'title' => $request->title,
