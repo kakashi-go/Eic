@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('/book', 'BookController@index');
+Route::get('/sports', 'SportsController');
 
 Route::get('/archives/',function(){
     return view('archives.index');
