@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Sports;
  
-class BookController extends Controller
+class SportsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Sports::all();
+        $sports = Sports::all();
         return view('sports.index', compact('sports'));
     }
  
@@ -36,7 +36,7 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        Book::create($request->all());
+        sports::create($request->all());
         return redirect()->route('sports.index')->with('success', '新規登録完了しました');
     }
  
@@ -48,7 +48,7 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        $book = Book::find($id);
+        $sports = sports::find($id);
         return view('sports.show', compact('sports'));
     }
  
@@ -60,7 +60,7 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        $book = Book::find($id);
+        $sports = sports::find($id);
         return view('sports.edit', compact('sports'));
     }
  
