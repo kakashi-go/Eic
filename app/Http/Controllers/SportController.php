@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
-use App\Sports;
-use App\Http\Requests\StoreSports;
+use App\Sport;
+use App\Http\Requests\StoreSport;
  
-class SportsController extends Controller
+class sportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class SportsController extends Controller
      */
     public function index()
     {
-        $sports = Sports::all();
-        return view('sports.index', compact('sports'));
+        $sports = Sport::all();
+        return view('sport.index', compact('sports'));
     }
  
     /**
@@ -26,7 +26,7 @@ class SportsController extends Controller
      */
     public function create()
     {
-        return view('sports.create');
+        return view('sport.create');
     }
  
     /**
@@ -35,10 +35,10 @@ class SportsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSports $request)
+    public function store(StoreSport $request)
     {
-        sports::create($request->all());
-        return redirect()->route('sports.index')->with('success', '新規登録完了しました');
+        Sport::create($request->all());
+        return redirect()->route('sport.index')->with('success', '新規登録完了しました');
     }
  
     /**
@@ -49,8 +49,8 @@ class SportsController extends Controller
      */
     public function show($id)
     {
-        $sports = sports::find($id);
-        return view('sports.show', compact('sports'));
+        $sport = Sport::find($id);
+        return view('sport.show', compact('sport'));
     }
  
     /**
@@ -61,8 +61,8 @@ class SportsController extends Controller
      */
     public function edit($id)
     {
-        $sports = sports::find($id);
-        return view('sports.edit', compact('sports'));
+        $sport = Sport::find($id);
+        return view('sport.edit', compact('sport'));
     }
  
     /**
@@ -72,13 +72,13 @@ class SportsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreSports $request, $id)
+    public function update(StoreSport $request, $id)
     {
         $update = [
             'title' => $request->title,
             'author' => $request->author
         ];
-        Sports::where('id', $id)->update($update);
+        Sport::where('id', $id)->update($update);
         return back()->with('success', '編集完了しました');
     }
  
@@ -90,7 +90,7 @@ class SportsController extends Controller
      */
     public function destroy($id)
     {
-        Sports::where('id', $id)->delete();
-        return redirect()->route('sports.index')->with('success', '削除完了しました');
+        Sport::where('id', $id)->delete();
+        return redirect()->route('sport.index')->with('success', '削除完了しました');
     }
 }
