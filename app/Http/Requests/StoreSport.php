@@ -38,4 +38,4 @@ class StoreSport extends FormRequest
     }
 }
 
-}
+

@@ -76,7 +76,7 @@ class sportController extends Controller
     {
         $update = [
             'title' => $request->title,
-            'author' => $request->author
+            'coach' => $request->coach,
         ];
         Sport::where('id', $id)->update($update);
         return back()->with('success', '編集完了しました');
