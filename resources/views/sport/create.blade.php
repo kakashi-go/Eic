@@ -1,5 +1,5 @@
 <h1>新規作成画面</h1>
-<p><a href="{{ route('sport.index')}}">一覧画面</a></p>
+<p><a href="{{ route('sports.index')}}">一覧画面</a></p>
  
 @if ($errors->any())
 <ul>
