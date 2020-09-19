@@ -7,14 +7,14 @@
  
 <table border="1">
     <tr>
-        <th>title</th>
+        <th>name</th>
         <th>詳細</th>
         <th>編集</th>
         <th>削除</th>
     </tr>
     @foreach ($sportss as $sports)
     <tr>
-        <td>{{ $sports->title }}</td>
+        <td>{{ $sports->name }}</td>
         <th><a href="{{ route('sports.show',$sports->id)}}">詳細</a></th>
         <th><a href="{{ route('sports.edit',$sports->id)}}">編集</a></th>
         <th>

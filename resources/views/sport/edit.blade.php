@@ -16,7 +16,7 @@
 <form action="{{ route('sport.update',$sport->id)}}" method="POST">
     @csrf
     @method('PUT')
-    <p>タイトル：<input type="text" name="title" value="{{ $sport->title }}"></p>
-    <p>コーチ：<input type="text" name="author" value="{{ $sport->author }}"></p>
+    <p>タイトル：<input type="text" name="name" value="{{ $sport->name }}"></p>
+    <!-- <p>コーチ：<input type="text" name="author" value="{{ $sport->author }}"></p> -->
     <input type="submit" value="編集する">
 </form>

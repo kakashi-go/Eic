@@ -75,8 +75,8 @@ class sportController extends Controller
     public function update(StoreSport $request, $id)
     {
         $update = [
-            'title' => $request->title,
-            'coach' => $request->coach,
+            'name' => $request->name,
+            // 'coach' => $request->coach,
         ];
         Sport::where('id', $id)->update($update);
         return back()->with('success', '編集完了しました');

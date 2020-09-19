@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Sport extends Model
 {
     protected $fillable = [
-        'title',
-        'coach',
+        'name',
+        // 'coach',
     ];
 }

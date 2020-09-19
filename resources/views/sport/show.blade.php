@@ -4,15 +4,15 @@
 <table border="1">
     <tr>
         <th>id</th>
-        <th>title</th>
-        <th>coach</th>
+        <th>name</th> 
+        <!-- <th>coach</th> -->
         <th>created_at</th>
         <th>updated_at</th>
     </tr>
     <tr>
         <td>{{ $sport->id }}</td>
-        <td>{{ $sport->title }}</td>
-        <td>{{ $sport->coach }}</td>
+        <td>{{ $sport->name }}</td> 
+        <!-- <td>{{ $sport->coach }}</td> -->
         <td>{{ $sport->created_at }}</td>
         <td>{{ $sport->updated_at }}</td>
     </tr>

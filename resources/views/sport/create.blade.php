@@ -11,7 +11,7 @@
 
 <form action="{{ route('sport.store')}}" method="POST">
     @csrf
-    <p>タイトル：<input type="text" name="title" value="{{old('title')}}"></p>
-    <p>コーチ：<input type="text" name="coach" value="{{old('coach')}}"></p>
+    <p>name：<input type="text" name="name" value="{{old('name')}}"></p>
+    <!-- <p>コーチ：<input type="text" name="coach" value="{{old('coach')}}"></p> -->
     <input type="submit" value="登録する">
 </form>
