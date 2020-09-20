@@ -13,8 +13,8 @@ class AddUserIdToPostsTable extends Migration
      */
     public function up()
     {
-        Schema::table('name', function (Blueprint $table) {
-            $table->string('summary');  //カラム追加
+        Schema::table('sports', function (Blueprint $table) {
+            $table->string('name');  //カラム追加
         });
     }
 
@@ -25,8 +25,8 @@ class AddUserIdToPostsTable extends Migration
      */
     public function down()
     {
-        Schema::table('name', function (Blueprint $table) {
-            $table->dropColumn('summary');  //カラムの削除
+        Schema::table('sports', function (Blueprint $table) {
+            $table->dropColumn('name');  //カラムの削除
         });
     }
 }
