@@ -15,6 +15,8 @@ class CreateCoarchRequestsTable extends Migration
     {
         Schema::create('coarch_requests', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('sport_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('sport_id')->references('id')->on('sports');
             $table->date('start_date');
