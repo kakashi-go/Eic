@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/sport', 'SportController');
 
+Route::resource('/coach_request', 'CoachRequestController');
 
 Route::get('/archives/',function(){
     return view('archives.index');

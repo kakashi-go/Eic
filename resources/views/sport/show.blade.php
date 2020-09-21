@@ -5,14 +5,14 @@
     <tr>
         <th>id</th>
         <th>name</th> 
-        <!-- <th>coach</th> -->
+        <th>coach_request</th>
         <th>created_at</th>
         <th>updated_at</th>
     </tr>
     <tr>
         <td>{{ $sport->id }}</td>
         <td>{{ $sport->name }}</td> 
-        <!-- <td>{{ $sport->coach }}</td> -->
+        <td>{{ $sport->coach_request}}</td> 
         <td>{{ $sport->created_at }}</td>
         <td>{{ $sport->updated_at }}</td>
     </tr>

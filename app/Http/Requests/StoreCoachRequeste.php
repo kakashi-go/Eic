@@ -1,10 +1,12 @@
 <?php
- 
+
 namespace App\Http\Requests;
- 
+
 use Illuminate\Foundation\Http\FormRequest;
- 
-class StoreSport extends FormRequest
+
+
+
+class StoreCoachRequeste extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,9 +15,9 @@ class StoreSport extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
- 
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -24,16 +26,7 @@ class StoreSport extends FormRequest
     public function rules()
     {
         return [
-            'coach_request' => 'required',
-            // 'author' => 'required',
-        ];
-    }
- 
-    public function messages()
-    {
-        return [
-            'coach_request' => 'コーチへの要求を入力して下さい。',
-            // 'author.required' => '著者を入力して下さい。',
+            //
         ];
     }
 }
