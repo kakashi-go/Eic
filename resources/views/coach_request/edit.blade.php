@@ -13,10 +13,16 @@
 </ul>
 @endif
 
-<form action="{{ route('sport.update',$sport->id)}}" method="POST">
+<form action="{{ route('coach_request',$coach_request->id)}}" method="POST">
     @csrf
     @method('PUT')
-    <p>タイトル：<input type="text" name="name" value="{{ $sport->name }}"></p>
-    <p>コーチへの要望：<input type="text" name="coach_request" value="{{ $sport->request }}"></p> 
+    <p>ユーザID：<input type="text" user_id="user_id" value="{{ $coach_request->user_id }}"></p>
+   
+    <p>コーチID：<input type="text" coach_id="coach_id" value="{{ $coach_request->coach_id }}"></p>
+   
+    <p>開始日時：<input type="text" start_date="start_date" value="{{ $coach_request->start_date }}"></p>
+   
+    <p>終了日時：<input type="text" end_date="end_date" value="{{ $coach_request->end_date }}"></p>
+
     <input type="submit" value="編集する">
 </form>

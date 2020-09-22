@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\CoarchRequest;
+use App\CoachRequest;
+use App\Http\Requests\StoreCoachRequest;
 use Illuminate\Support\Facades\Auth;
 
-use App\Http\Requests\StoreCoachRequest;
+
 
 class CoachRequestController extends Controller
 {
@@ -29,7 +30,7 @@ class CoachRequestController extends Controller
      */
     public function create()
     {
-       return view('coach_request.create') //
+       return view('coach_request.create') ;//
     }
 
     /**
@@ -66,8 +67,7 @@ class CoachRequestController extends Controller
     public function edit($id)
     {
         $update = [
-            $user_id = Auth::id();
-            $sport_id = Auth::sport_id(),
+          
             // 'author' => $request->author
         ];
         CoachRequest::where('id', $id)->update($update);
@@ -83,6 +83,8 @@ class CoachRequestController extends Controller
      */
     public function update(StoreCoachRequest $request, $id)
     {
+        $user_id = Auth::id();
+        // $sport_id = Auth::sport_id(),
         CoachRequest::where('id', $id)->delete();
         return redirect()->route('coach_request.index')->with('success', '削除完了しました');
     }
@@ -93,8 +95,11 @@ class CoachRequestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {S
-        //
+
+        public function destroy($id)
+    {
+        CoachRequest::where('id', $id)->delete();
+        return redirect()->route('sport.index')->with('success', '削除完了しました');
     }
+    
 }
