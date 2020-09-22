@@ -28,9 +28,11 @@ class CoachRequestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-       return view('coach_request.create') ;//
+    public function create(){
+        $sports_category = \App\Sport::orderBy('code','asc')->pluck('name', 'code');
+        $sports_category = $sports_category -> prepend('スポーツ名', '');
+
+        return view('items.create')->with(['sports_category' => $sports_category]);
     }
 
     /**

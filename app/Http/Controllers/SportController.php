@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Sport;
 use App\Http\Requests\StoreSport;
  
-class sportController extends Controller
+class SportController extends Controller
 {
     /**
      * Display a listing of the resource.

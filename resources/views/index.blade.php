@@ -5,6 +5,8 @@
 <p>{{ $message }}</p>
 @endif
  
+{{ Form::select('pref_id', $coach_request, null, ['class' => 'form', 'id' => 'pref_id']) }}
+
 <table border="1">
     <tr>
         <th>名前</th>
