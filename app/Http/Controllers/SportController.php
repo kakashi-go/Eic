@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Sport;
 use App\Http\Requests\StoreSport;
- 
+use App\CoachRequest; 
+
 class SportController extends Controller
 {
     /**

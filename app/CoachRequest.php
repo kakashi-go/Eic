@@ -4,7 +4,7 @@
  
  use Illuminate\Database\Eloquent\Model;
   
- class CoachReques extends Model
+ class CoachRequest extends Model
  {
      protected $fillable = [
          'user_id',
