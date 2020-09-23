@@ -19,6 +19,7 @@ class CoachRequestController extends Controller
     public function index()
     {
         $coach_requests = CoachRequest::all();
+        // $coach_requests = CoachRequest::all();
         return view('coach_request.index', compact('coach_requests'));
         //
     }
