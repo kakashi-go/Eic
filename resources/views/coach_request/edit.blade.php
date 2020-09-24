@@ -1,5 +1,5 @@
 <h1>編集画面</h1>
-<p><a href="{{ route('sport.index')}}">一覧画面</a></p>
+<p><a href="{{ route('coach_request.index')}}">一覧画面</a></p>
  
 @if ($message = Session::get('success'))
 <p>{{ $message }}</p>

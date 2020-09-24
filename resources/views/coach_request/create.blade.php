@@ -1,5 +1,5 @@
 <h1>新規作成画面</h1>
-<p><a href="{{ route('sport.index')}}">一覧画面</a></p>
+<p><a href="{{ route('coach_request.index')}}">一覧画面</a></p>
  
 @if ($errors->any())
 <ul>
@@ -9,7 +9,7 @@
 </ul>
 @endif
 
-<form action="{{ route('sport.store')}}" method="POST">
+<form action="{{ route('coach_request.store')}}" method="POST">
     @csrf
     <p>ユーザーID：<input type="text" user_id="name" value="{{old('user_id')}}"></p>
     <p>コーチID：<input type="text" name="coach_id" value="{{old('coach_id')}}"></p> 

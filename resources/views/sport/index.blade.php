@@ -7,20 +7,18 @@
  
 <table border="1">
     <tr>
-        <th>名前</th>
-        <!-- <th>コーチへの要望</th> -->
+        <th>スポーツ名</th>
         <th>詳細</th>
         <th>編集</th>
         <th>削除</th>
     </tr>
-    @foreach ($sportss as $sports)
+    @foreach ($sports as $sport)
     <tr>
-        <td>{{ $sports->name }}</td>
-        <!-- <td>{{ $sports->coach_request }}</td> -->
-        <th><a href="{{ route('sports.show',$sports->id)}}">詳細</a></th>
-        <th><a href="{{ route('sports.edit',$sports->id)}}">編集</a></th>
+        <td>{{ $sport->name }}</td>
+        <th><a href="{{ route('sport.show',$sports->id)}}">詳細</a></th>
+        <th><a href="{{ route('sport.edit',$sports->id)}}">編集</a></th>
         <th>
-            <form action="{{ route('sports.destroy', $sports->id)}}" method="POST">
+            <form action="{{ route('sport.destroy', $sport->id)}}" method="POST">
                 @csrf
                 @method('DELETE')
                 <input type="submit" name="" value="削除">
