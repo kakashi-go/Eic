@@ -17,7 +17,8 @@ class SportController extends Controller
     public function index()
     {
         $sports = Sport::all();
-        return view('sport.index', compact('sports'));
+       // return view('sport.edit', compact('sports'));
+       return view('sport.index', compact('sports'));
     }
  
     /**
@@ -62,8 +63,12 @@ class SportController extends Controller
      */
     public function edit($id)
     {
-        $sport = Sport::find($id);
-        return view('sport.edit', compact('sport'));
+        $update = [
+          
+            // 'author' => $request->author
+        ];
+        Sport::where('id', $id)->update($update);
+        return back()->with('success', '編集完了しました');
     }
  
     /**
