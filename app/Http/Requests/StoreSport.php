@@ -24,16 +24,16 @@ class StoreSport extends FormRequest
     public function rules()
     {
         return [
-            'coach_request' => 'required',
-            // 'author' => 'required',
+            'name' => 'required',
         ];
     }
- 
+
     public function messages()
     {
         return [
-            'coach_request' => 'コーチへの要求を入力して下さい。',
-            // 'author.required' => '著者を入力して下さい。',
+            'name' => 'スポーツ名を入力してください',
         ];
     }
+ 
+    
 }
